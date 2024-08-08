@@ -3,7 +3,7 @@ set(LLVM_LINK_COMPONENTS
   Support
   )
 
-add_executable(toyc-ch1
+add_toy_chapter(toyc-ch1
   toyc.cpp
   parser/AST.cpp
   )

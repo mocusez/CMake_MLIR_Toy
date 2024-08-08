@@ -9,9 +9,23 @@ find_package(MLIR REQUIRED CONFIG)
 include_directories(${LLVM_INCLUDE_DIRS})
 include_directories(${MLIR_INCLUDE_DIRS})
 
+list(APPEND CMAKE_MODULE_PATH "${MLIR_CMAKE_DIR}")
+list(APPEND CMAKE_MODULE_PATH "${LLVM_CMAKE_DIR}")
+
+include(TableGen)
+include(AddLLVM)
+include(AddMLIR)
+include(HandleLLVMOptions)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
+
+add_custom_target(Toy)
+macro(add_toy_chapter name)
+  add_dependencies(Toy ${name})
+  add_llvm_example(${name} ${ARGN})
+endmacro(add_toy_chapter name)
 
 add_subdirectory(Ch1)
 add_subdirectory(Ch2)

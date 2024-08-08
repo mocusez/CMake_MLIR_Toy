@@ -5,12 +5,17 @@ set(LLVM_LINK_COMPONENTS
   Support
   )
 
-add_executable(toyc-ch2
+add_toy_chapter(toyc-ch2
   toyc.cpp
   parser/AST.cpp
   mlir/MLIRGen.cpp
   mlir/Dialect.cpp
-  )
+
+  DEPENDS
+  ToyCh2OpsIncGen
+
+)
+
 include_directories(include/)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/include/)
 target_link_libraries(toyc-ch2

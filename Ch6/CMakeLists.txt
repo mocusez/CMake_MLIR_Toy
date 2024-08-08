@@ -15,11 +15,11 @@ set(LLVM_LINK_COMPONENTS
   OrcJIT
   )
 
-# set(LLVM_TARGET_DEFINITIONS mlir/ToyCombine.td)
-# mlir_tablegen(ToyCombine.inc -gen-rewriters)
-# add_public_tablegen_target(ToyCh6CombineIncGen)
+set(LLVM_TARGET_DEFINITIONS mlir/ToyCombine.td)
+mlir_tablegen(ToyCombine.inc -gen-rewriters)
+add_public_tablegen_target(ToyCh6CombineIncGen)
 
-add_executable(toyc-ch6
+add_toy_chapter(toyc-ch6
   toyc.cpp
   parser/AST.cpp
   mlir/MLIRGen.cpp
@@ -29,10 +29,10 @@ add_executable(toyc-ch6
   mlir/ShapeInferencePass.cpp
   mlir/ToyCombine.cpp
 
-  # DEPENDS
-  # ToyCh6ShapeInferenceInterfaceIncGen
-  # ToyCh6OpsIncGen
-  # ToyCh6CombineIncGen
+  DEPENDS
+  ToyCh6ShapeInferenceInterfaceIncGen
+  ToyCh6OpsIncGen
+  ToyCh6CombineIncGen
   )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})

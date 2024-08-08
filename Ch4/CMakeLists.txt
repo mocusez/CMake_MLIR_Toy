@@ -6,11 +6,11 @@ set(LLVM_LINK_COMPONENTS
   Support
   )
 
-# set(LLVM_TARGET_DEFINITIONS mlir/ToyCombine.td)
-# mlir_tablegen(ToyCombine.inc -gen-rewriters)
-# add_public_tablegen_target(ToyCh4CombineIncGen)
+set(LLVM_TARGET_DEFINITIONS mlir/ToyCombine.td)
+mlir_tablegen(ToyCombine.inc -gen-rewriters)
+add_public_tablegen_target(ToyCh4CombineIncGen)
 
-add_executable(toyc-ch4
+add_toy_chapter(toyc-ch4
   toyc.cpp
   parser/AST.cpp
   mlir/MLIRGen.cpp
@@ -18,10 +18,10 @@ add_executable(toyc-ch4
   mlir/ShapeInferencePass.cpp
   mlir/ToyCombine.cpp
 
-  # DEPENDS
-  # ToyCh4OpsIncGen
-  # ToyCh4ShapeInferenceInterfaceIncGen
-  # ToyCh4CombineIncGen
+  DEPENDS
+  ToyCh4OpsIncGen
+  ToyCh4ShapeInferenceInterfaceIncGen
+  ToyCh4CombineIncGen
   )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
