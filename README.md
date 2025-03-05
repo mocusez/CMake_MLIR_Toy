@@ -4,7 +4,7 @@ This repository contains sample code to support the tutorial on using MLIR for b
 
 See [docs/Tutorials/Toy](https://github.com/llvm/llvm-project/tree/main/mlir/docs/Tutorials/Toy) for more information.
 
-In this repository, you can **run the MLIR toy tutorial (on Debian) without compile the LLVM project** 😋
+In this repository, you can **run the MLIR toy tutorial (on Debian or Ubuntu + llvm.sh) without compile the LLVM project** 😋
 
 ## Environment
 
@@ -13,12 +13,12 @@ In this repository, you can **run the MLIR toy tutorial (on Debian) without comp
 - Debian
 - CMake
 - Ninja-Build
-- LLVM18
-- Clang18
-- MLIR18
+- LLVM20
+- Clang20
+- MLIR20
 
 ```
-apt install llvm-18 clang-18 cmake ninja-build mlir-18-tools libmlir-18-dev
+apt install llvm-20 clang-20 cmake ninja-build mlir-20-tools libmlir-20-dev
 ```
 
 ## Note

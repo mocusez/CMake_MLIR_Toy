@@ -14,8 +14,7 @@ add_toy_chapter(toyc-ch2
   DEPENDS
   ToyCh2OpsIncGen
 
-)
-
+  )
 include_directories(include/)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/include/)
 target_link_libraries(toyc-ch2

@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.10.0)
 project(toy VERSION 0.1.0 LANGUAGES CXX C)
 
-set(LLVM_DIR /usr/lib/llvm-18/lib/cmake/llvm/)
+set(LLVM_DIR /usr/lib/llvm-20/lib/cmake/llvm/)
 find_package(LLVM REQUIRED CONFIG)
-set(MLIR_DIR /usr/lib/llvm-18/lib/cmake/mlir/)
+set(MLIR_DIR /usr/lib/llvm-20/lib/cmake/mlir/)
 find_package(MLIR REQUIRED CONFIG)
 
 include_directories(${LLVM_INCLUDE_DIRS})
